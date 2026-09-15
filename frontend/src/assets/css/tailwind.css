@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+   Lapisan komponen — kelas siap pakai di atas token tokens.css.
+   Bentuknya mengikuti landing page Spike (tombol pil, kartu garis rambut,
+   chip eyebrow, kotak ikon pastel) dengan palet Universitas Terbuka.
+   ========================================================= */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface font-sans text-[15px] leading-relaxed text-ink antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply mb-[.5em] font-display font-bold leading-[1.2] tracking-[-0.01em] text-ink;
+    text-wrap: balance;
+  }
+
+  p {
+    @apply mb-4 text-ink-muted;
+    text-wrap: pretty;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  button {
+    @apply cursor-pointer border-none bg-transparent font-sans;
+  }
+
+  input, select, textarea {
+    @apply font-sans;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-4 outline-secondary;
+  }
+}
+
+@layer components {
+  /* ─── Tombol berbentuk pil (ciri paling khas Spike) ─── */
+  .btn {
+    @apply inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full
+           border border-transparent px-7 text-[.95rem] font-semibold
+           transition-[background-color,border-color,box-shadow,transform]
+           duration-200 ease-smooth active:scale-[.98];
+  }
+
+  .btn-sm  { @apply min-h-[38px] px-5 text-[.8125rem]; }
+  .btn-lg  { @apply min-h-[54px] px-9 text-base; }
+
+  .btn-primary {
+    @apply bg-primary text-white shadow-glow hover:bg-primary-hover;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-accent-on shadow-glow-accent hover:bg-accent-hover;
+  }
+
+  /* Outline tipis — Spike memakainya berdampingan dengan tombol isi */
+  .btn-outline {
+    @apply border-primary/30 bg-transparent text-primary
+           hover:border-primary hover:bg-primary/[.04];
+  }
+
+  .btn-outline-white {
+    @apply border-white/40 bg-transparent text-white hover:border-white hover:bg-white/10;
+  }
+
+  .btn-ghost {
+    @apply border-line bg-surface text-ink hover:border-primary/40 hover:text-primary;
+  }
+
+  /* ─── Chip eyebrow di atas judul section ─── */
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full px-4 py-1.5
+           text-xs font-semibold tracking-wide;
+  }
+
+  .chip-primary { @apply bg-primary/[.07] text-primary; }
+  .chip-accent  { @apply bg-accent/20 text-[#8A6D00]; }
+
+  /* ─── Badge status ─── */
+  .badge {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-[.6875rem]
+           font-bold uppercase tracking-[.06em];
+  }
+
+  .badge-penting { @apply bg-[#FDECEA] text-[#C0392B]; }
+  .badge-baru    { @apply bg-[#E8F4FE] text-[#0A4C85]; }
+  .badge-update  { @apply bg-[#FFF6E5] text-[#A16207]; }
+
+  /* ─── Kartu: putih, garis rambut, bayangan nyaris tak ada ─── */
+  .card {
+    @apply rounded-xl border border-line bg-surface shadow-card
+           transition-[transform,box-shadow,border-color] duration-300 ease-smooth;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-1 hover:border-transparent hover:shadow-hover;
+  }
+
+  /* ─── Kotak ikon pastel ─── */
+  .icon-box {
+    @apply flex h-12 w-12 items-center justify-center rounded-xl
+           transition-transform duration-200;
+  }
+
+  .icon-box-blue   { @apply bg-[#E6EEF5] text-primary; }
+  .icon-box-sky    { @apply bg-[#E8F4FE] text-secondary; }
+  .icon-box-amber  { @apply bg-[#FFF6E5] text-[#B4820A]; }
+  .icon-box-purple { @apply bg-[#F1EEFD] text-[#6D4AC4]; }
+  .icon-box-green  { @apply bg-[#E7F8F0] text-[#0E9F6E]; }
+  .icon-box-red    { @apply bg-[#FDECEA] text-[#D35044]; }
+
+  /* ─── Section ─── */
+  .section       { @apply py-16 md:py-24; }
+  .section-head  { @apply mx-auto mb-14 max-w-[640px] text-center; }
+  .section-title { @apply mb-4 font-display text-section font-extrabold; }
+  .section-lead  { @apply mx-auto max-w-[520px] text-[1.0625rem] leading-relaxed text-ink-muted; }
+
+  /* ─── Pita ajakan gelap (setara CTA band Spike) ─── */
+  .cta-band {
+    @apply relative overflow-hidden rounded-2xl bg-primary-hover px-8 py-12 md:px-14 md:py-16;
+  }
+
+  /* ─── Skeleton & galat ─── */
+  .skeleton { @apply animate-pulse rounded-xl bg-canvas-2; }
+
+  .alert-danger {
+    @apply rounded-xl border border-[#FADBD8] bg-[#FDECEA] px-5 py-4 text-sm text-[#C0392B];
+  }
+}

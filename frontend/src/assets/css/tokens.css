@@ -1,0 +1,77 @@
+/* ============================================================
+   Design Tokens — Portal DAAK UT
+
+   Palet merek tetap milik Universitas Terbuka (biru tua + kuning emas).
+   Bentuk, jarak, bayangan, dan tipografi mengikuti bahasa visual landing
+   page Spike: terang, lapang, sudut membulat, bayangan nyaris tak terasa.
+
+   Catatan: warna yang sama juga ditulis di tailwind.config.js. Tailwind
+   tidak bisa membaca variabel CSS untuk perhitungan opacity, jadi keduanya
+   memang duplikat — ubah SELALU di dua tempat.
+   ============================================================ */
+:root {
+  /* ── Brand (UT) ── */
+  --color-primary: #003366;
+  --color-primary-hover: #002952;
+  --color-primary-light: #E6EEF5;
+  --color-secondary: #0A4C85;
+  --color-secondary-hover: #004080;
+  --color-secondary-light: #C0D4E6;
+  --color-accent: #FFCC00;
+  --color-accent-hover: #E6B800;
+  --color-accent-light: #FFF4C7;
+  --color-on-accent: #003366;
+
+  /* ── Permukaan (gaya Spike) ── */
+  --color-surface: #FFFFFF;
+  --color-canvas: #F5F8FC;
+  --color-canvas-2: #EFF3F9;
+  --color-text: #0F172A;
+  --color-text-muted: #5A6A85;
+  --color-text-light: #8A97AC;
+  --color-border: #E6ECF4;
+  --color-border-subtle: #F1F5F9;
+
+  /* ── Tint kotak ikon pastel ── */
+  --tint-blue: #E6EEF5;
+  --tint-sky: #E8F4FE;
+  --tint-amber: #FFF6E5;
+  --tint-purple: #F1EEFD;
+  --tint-green: #E7F8F0;
+  --tint-red: #FDECEA;
+
+  /* ── Status badge ── */
+  --badge-penting-bg: #FDECEA;
+  --badge-penting-fg: #C0392B;
+  --badge-baru-bg: #E8F4FE;
+  --badge-baru-fg: #0A4C85;
+  --badge-update-bg: #FFF6E5;
+  --badge-update-fg: #A16207;
+
+  /* ── Typography ── */
+  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* ── Layout ── */
+  --max-width: 1200px;
+  --topbar-height: 68px;
+  --navbar-height: 60px;
+
+  /* Spike membulat: tombol berbentuk pil, kartu 12–20px */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+  --radius-full: 9999px;
+
+  /* ── Shadow (sangat lembut) ── */
+  --shadow-card: 0 1px 2px rgba(16, 24, 40, .04);
+  --shadow-hover: 0 12px 40px -8px rgba(0, 51, 102, .14);
+  --shadow-pop: 0 12px 40px -8px rgba(0, 0, 0, .08);
+  --shadow-glow: 0 4px 12px rgba(0, 51, 102, .30);
+
+  /* ── Transition ── */
+  --transition-fast: .2s cubic-bezier(.4, 0, .2, 1);
+  --transition-normal: .3s cubic-bezier(.4, 0, .2, 1);
+}
